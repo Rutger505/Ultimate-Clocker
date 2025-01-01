@@ -1,5 +1,5 @@
 import { WindowActions } from './components/WindowActions';
-import Report from '@renderer/components/Report';
+import Report from './components/Report';
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <h1 className={'text-2xl font-semibold'}>Ultimate Clocker</h1>
 
       <div className={'w-full h-full flex justify-center items-center'}>
-        <Report />
+        <Report deadlineDay={15} />
       </div>
     </main>
   );
