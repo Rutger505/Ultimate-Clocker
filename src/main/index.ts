@@ -6,16 +6,17 @@ import icon from '../../resources/icon.png?asset';
 function createWindow(): void {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
+    icon,
     width: 700,
     height: 450,
     show: false,
     autoHideMenuBar: true,
     center: true,
     resizable: false,
+    maximizable: false,
     frame: false,
     title: 'Ultimate Clocker',
     titleBarStyle: 'hidden',
-    ...(process.platform === 'linux' ? { icon } : {}),
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
       sandbox: false,
@@ -54,8 +55,13 @@ app.whenReady().then(() => {
     optimizer.watchWindowShortcuts(window);
   });
 
-  // IPC test
-  ipcMain.on('ping', () => console.log('pong'));
+  ipcMain.on('minimize-app', () => {
+    BrowserWindow.getFocusedWindow()?.minimize();
+  });
+
+  ipcMain.on('close-app', () => {
+    app.quit();
+  });
 
   createWindow();
 
