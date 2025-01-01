@@ -1,7 +1,9 @@
+import { WindowActions } from './components/WindowActions';
+
 function App() {
   return (
-    <main className={'draggable bg-background h-screen'}>
-      Hello, World <button className={'bg-warning'}>Button</button>
+    <main className={'text-font draggable bg-background h-screen'}>
+      <WindowActions />
     </main>
   );
 }
