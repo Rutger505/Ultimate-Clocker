@@ -1,8 +1,8 @@
-import React from 'react';
+import { ReactNode } from 'react';
 
 export interface TabProps {
   label: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 export function Tab({ children }: TabProps) {
