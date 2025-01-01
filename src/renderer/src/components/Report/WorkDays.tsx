@@ -5,11 +5,11 @@ interface Props {
 
 export function WorkDays({ workDays, setWorkDays }: Readonly<Props>) {
   return (
-    <div className={'space-y-2 flex items-center flex-col'}>
-      <h3 className={'text-xl font-semibold'}>Work Days</h3>
+    <div className={'flex items-center flex-col gap-2'}>
+      <h3 className={'text-lg font-semibold'}>Work Days</h3>
       <div className={'flex gap-2'}>
         {workDays.map((workDay, index) => (
-          <div
+          <button
             key={index}
             className={`w-8 h-8 flex justify-center items-center rounded-full cursor-pointer ${
               workDay ? 'bg-selection' : 'bg-background'
@@ -21,7 +21,7 @@ export function WorkDays({ workDays, setWorkDays }: Readonly<Props>) {
             }}
           >
             {['M', 'T', 'W', 'T', 'F'][index]}
-          </div>
+          </button>
         ))}
       </div>
     </div>

@@ -11,7 +11,7 @@ export function Report({ deadlineDay }: Readonly<Props>) {
 
   return (
     <div className={'flex flex-col items-center gap-5'}>
-      <h2 className={'text-2xl font-semibold mt-4'}>Report</h2>
+      <h2 className={'text-2xl font-semibold'}>Report</h2>
       <WorkDays workDays={workDays} setWorkDays={setWorkDays} />
       <Deadline workDays={workDays} deadlineDay={deadlineDay} />
     </div>

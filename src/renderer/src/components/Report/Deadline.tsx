@@ -1,4 +1,5 @@
 import { DateTime } from 'luxon';
+import clsx from 'clsx';
 
 interface Props {
   workDays: boolean[];
@@ -27,9 +28,19 @@ export function Deadline({ workDays, deadlineDay }: Readonly<Props>) {
 
   const daysUntilLastWorkDayBeforeDeadline = lastWorkDay.diff(today, 'days').as('days');
 
+  let deadlineColor: string;
+  if (daysUntilLastWorkDayBeforeDeadline > 10) {
+    deadlineColor = '';
+  } else if (daysUntilLastWorkDayBeforeDeadline > 0) {
+    deadlineColor = 'text-warning';
+  } else {
+    deadlineColor = 'text-danger';
+  }
+
   return (
-    <div className="text-font">
-      <p>
+    <div className="flex-col flex items-center gap-2">
+      <h3 className="text-lg font-semibold">Deadline</h3>
+      <p className={clsx(deadlineColor, 'max-w-[200px] text-center')}>
         Send report{' '}
         {daysUntilLastWorkDayBeforeDeadline > 0
           ? `in ${daysUntilLastWorkDayBeforeDeadline} days `
