@@ -10,6 +10,11 @@ function createWindow(): void {
     height: 450,
     show: false,
     autoHideMenuBar: true,
+    center: true,
+    resizable: false,
+    frame: false,
+    title: 'Ultimate Clocker',
+    titleBarStyle: 'hidden',
     ...(process.platform === 'linux' ? { icon } : {}),
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
