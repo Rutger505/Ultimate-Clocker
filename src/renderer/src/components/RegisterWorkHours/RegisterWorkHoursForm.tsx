@@ -1,7 +1,8 @@
 import { Tab, Tabs } from '../Tabs';
+import { FormEvent } from 'react';
 
 export function RegisterWorkHoursForm() {
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
   }
 

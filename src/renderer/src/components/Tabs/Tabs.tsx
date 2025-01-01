@@ -1,13 +1,12 @@
 import React, { Children, isValidElement, ReactElement, useState } from 'react';
 import { Tab, TabProps } from './Tab';
-import { Select } from '@renderer/components/Form/Select';
+import { Select } from '../Form/Select';
 
 interface TabsProps {
   children: React.ReactNode;
-  defaultTab?: number;
 }
 
-export function Tabs({ children }: TabsProps) {
+export function Tabs({ children }: Readonly<TabsProps>) {
   const [activeTab, setActiveTab] = useState(0);
 
   const tabs = Children.toArray(children)
