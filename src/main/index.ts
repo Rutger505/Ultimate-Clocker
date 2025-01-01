@@ -6,6 +6,7 @@ import icon from '../../resources/icon.png?asset';
 function createWindow(): void {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
+    icon,
     width: 700,
     height: 450,
     show: false,
@@ -15,7 +16,6 @@ function createWindow(): void {
     frame: false,
     title: 'Ultimate Clocker',
     titleBarStyle: 'hidden',
-    ...(process.platform === 'linux' ? { icon } : {}),
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
       sandbox: false,
