@@ -13,6 +13,7 @@ function createWindow(): void {
     autoHideMenuBar: true,
     center: true,
     resizable: false,
+    maximizable: false,
     frame: false,
     title: 'Ultimate Clocker',
     titleBarStyle: 'hidden',
